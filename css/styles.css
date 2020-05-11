@@ -1,0 +1,145 @@
+/* CSS Color Variable */
+:root {
+    --font-family: 'Nunito', san-serif;
+
+    /* Base Colors */
+    --blue: #087E8B;
+    --red: #FF5A5F;
+    --black: #3C3C3C;
+    --white: #F5F5F5;
+    --grey: #DAD2D8;
+    --dark-grey: #888;
+
+    /* Application Colors */
+    --primary-color: var(--red);
+    --secondary-color: var(--blue);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-family);
+}
+
+/* Style the container */
+.container {
+    width: 40%;
+    margin: 0 auto;
+
+    display:flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    
+    background: var(--white);
+    border-bottom-left-radius: 1.2em;
+    border-bottom-right-radius: 1.2em;
+    box-shadow: 0px 0px 17px 0px var(--black);
+}
+
+
+/* Style the header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    padding: 20px 30px;
+    color: var(--white);
+    text-align: center;
+    border-bottom-right-radius: .8em;
+    border-bottom-left-radius: .8em;
+}
+
+/* Style the input */
+input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+    padding: 10px;
+    width: 25%;
+    background: var(--secondary-color);
+    color: var(--white);
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+}
+
+.addBtn:hover {
+    color: var(--black);
+    background-color: var(--grey);
+}
+
+/* Remove margins and padding from list */
+ul {
+    margin: 1em;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+ul > li {
+    margin: .4em;
+    list-style-type: none;
+    cursor: pointer;
+    position: relative;
+
+    background: var(--grey);
+    padding: 1.5em;
+    border-radius: 1em;
+    width: 90%;   
+    transition: .2s;
+
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+ul li:nth-child(odd) {
+    background: var(--red);
+}
+
+ul li:hover {
+    background: var(--dark-grey);
+}
+
+ul li.checked {
+    background: var(--black);
+    color: var(--white);
+    text-decoration: line-through;
+}
+
+/* Style the close button */
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1.5em;
+    border-top-right-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+.close:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
